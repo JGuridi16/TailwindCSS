@@ -1,10 +1,11 @@
-import React from "react";
+import { useState } from 'react';
+import { Login } from './components/Login'
+import Home from './components/Home'
 
 const App = () => {
-    return (
-        <div>
-            Hello World
-        </div>);
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    return loggedIn ? <Home /> : <Login setUserLoggedIn={setLoggedIn} />
 }
 
 export default App;
